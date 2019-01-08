@@ -3,9 +3,6 @@ const int echoPin = 10;
 const int ledPin = 7;
 // defines variables
 long duration;
-int distance1;
-int distance2;
-int diff;
 int distance;
 bool i = false;
 void setup() {
@@ -29,9 +26,7 @@ distance= duration*0.034/2;
 // Prints the distance on the Serial Monitor
 Serial.print("Distance: ");
 Serial.println(distance);
-distance1 = distance;
-distance2 = distance;
-diff = distance1-distance2;
+
 if(distance<20){
   if(i==true){
     i=false;
@@ -48,5 +43,4 @@ if(i==true){
 if(i==false){
   digitalWrite(ledPin, LOW);
 }
-Serial.print(distance1);
 }
